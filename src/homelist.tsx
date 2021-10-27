@@ -87,7 +87,7 @@ function HomeList(props: Props) {
                                     </div>
                                     <div>
                                         <Tooltip title="Repo Url" placement="right-start">
-                                            <a href={e?.node?.url} target="_blank" style={{ textDecoration: 'none', color: 'black', padding: '10px' }}> {e?.node?.url}</a>
+                                            <a href={e?.node?.url} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'black', padding: '10px' }}> {e?.node?.url}</a>
                                         </Tooltip>
                                     </div>
                                 </div>
