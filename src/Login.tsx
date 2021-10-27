@@ -14,7 +14,8 @@ const Login: React.FC = () => {
         history.push("/home/homelist");
     }
 
-    
+    // const REACT_APP_CLIENT_ID = '630c7adc853bc773cbbf';
+    // const REACT_APP_REDIRECT_URI = 'http://localhost:3000';
 
     useEffect(() => {
         const code: RegExpMatchArray | number | string | undefined = window.location.href.match(/\?code=(.*)/)?.[1]
@@ -24,8 +25,8 @@ const Login: React.FC = () => {
             const getcode = async (): Promise<any> => {
                 // let getc = await axios.get(`http://localhost:9999/authenticate/${code}`)
 
-                let getc = await axios.post(`https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&scope=user%20public_repo&redirect_uri=${REDIRECT_URI}&client_secret=${SECRET_KEY}&code=${code}`)
-                console.log(getc);
+                let getc = await axios.post(`https://github.com/login/oauth/access_token?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=user%20public_repo&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&client_secret=${process.env.REACT_APP_SECRET_KEY}&code=${code}`)
+                console.log(getc.data.token);
                 // let token = getc.data.split("&")[0].split("=")[1]
                 // console.log(token);
                 let token = getc.data.token;
