@@ -80,7 +80,7 @@ function HomeList(props: Props) {
                                             <span style={{ padding: '10px' }}><Chip style={{ backgroundColor: 'black', color: 'grey' }} label={e.node.isPrivate ? 'Private' : 'Public'} /></span>
                                         </div>
                                         <div className="d-flex ">
-                                            <h6 style={{ padding: '10px' }}>
+                                            <h6 style={{ color:'black' padding: '10px' }}>
                                                 {e?.node?.createdAt?.substring(0, 10)}
                                             </h6>
                                         </div>

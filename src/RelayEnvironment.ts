@@ -14,7 +14,7 @@ async function fetchRelay(
     variables: Variables
 ) {
     const token = localStorage.getItem('token');
-    console.log(token);
+    
     const response = await fetch("https://api.github.com/graphql", {
         method: "POST",
         headers: {

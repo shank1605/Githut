@@ -51,7 +51,6 @@ function Home() {
     };
 
     const preloadedQuery: listRepositoryNameQuery.listRepositoryNameQueryResponse = useLazyLoadQuery<listRepositoryNameQuery.listRepositoryNameQuery>(RepositoryNameQuery, searchArgs);
-    console.log(preloadedQuery)
     const [userDetail, setUserdetail] = useState<Responsedata>()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [open1, setOpen1] = React.useState(true);
@@ -87,7 +86,7 @@ function Home() {
             const headers = { Authorization: `Token ${token}` }
             axios.get(`https://api.github.com/user`, { headers })
                 .then((response) => {
-                    console.log("home", response)
+                    
                     setUserdetail({ login: response.data.login, avatar_url: response.data.avatar_url, following: response.data.following, followers: response.data.followers });
                 })
                 .catch(error => {

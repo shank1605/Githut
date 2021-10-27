@@ -75,7 +75,7 @@ function Detailspage() {
                             Git Repo Url
                         </Typography>
                         <Typography variant="h6" gutterBottom component="div">
-                            <a href={found?.url} target="_blank"  > {found?.url} </a>
+                            <a style={{color:'black'}} href={found?.url} target="_blank"  > {found?.url} </a>
                         </Typography>
                     </div>
                     <div className="Marginlist">

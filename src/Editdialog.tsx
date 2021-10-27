@@ -38,7 +38,6 @@ export default function EditDialog(props: founddata1) {
     if (isInFlight) {
         return <Spinner />;
     }
-    console.log(props.foundid);
     const handlerepoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setReponame(e.currentTarget.value)
     }
@@ -77,7 +76,7 @@ export default function EditDialog(props: founddata1) {
         setDes(null);
         setReponame(null)
     }
-    console.log("shashank")
+  
     return (
         <div>
             <Button
