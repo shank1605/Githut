@@ -24,8 +24,8 @@ const Login: React.FC = () => {
             // axios.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&scope=repo&redirect_uri=${REDIRECT_URI}&client_secret=${SECRET_KEY}&code=${code}`)
             const getcode = async (): Promise<any> => {
                 // let getc = await axios.get(`http://localhost:9999/authenticate/${code}`)
-                let headers={headers:{'Access-Control-Allow-Origin':'https://githut.netlify.app/'}}
-                let getc = await axios.get(`https://github.com/login/oauth/access_token?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=user%20public_repo&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&client_secret=${process.env.REACT_APP_SECRET_KEY}&code=${code}`,headers)
+                // let headers={headers:{'Access-Control-Allow-Origin':'https://githut-3o7d2edoo-shank1605.vercel.app/'}}
+                let getc = await axios.get(`https://github.com/login/oauth/access_token?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=user%20public_repo&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&client_secret=${process.env.REACT_APP_SECRET_KEY}&code=${code}`)
                 console.log(getc.data.token);
                 // console.log(getc)
                 // let token = getc.data.split("&")[0].split("=")[1]
