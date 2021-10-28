@@ -25,7 +25,7 @@ const Login: React.FC = () => {
             const getcode = async (): Promise<any> => {
                 // let getc = await axios.get(`http://localhost:9999/authenticate/${code}`)
 
-                let getc = await axios.get(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=user%20public_repo&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&client_secret=${process.env.REACT_APP_SECRET_KEY}&code=${code}`)
+                let getc = await axios.get(`https://github.com/login/oauth/access_token?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=user%20public_repo&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&client_secret=${process.env.REACT_APP_SECRET_KEY}&code=${code}`)
                 // console.log(getc.data.token);
                 console.log(getc)
                 let token = getc.data.split("&")[0].split("=")[1]
