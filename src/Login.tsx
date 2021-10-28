@@ -23,6 +23,7 @@ const Login: React.FC = () => {
                 let getc = await axios.post('https://githutapinodejs.herokuapp.com/github', data)
                 console.log(getc);
                 let token = getc.data.token;
+                console.log(token);
                 localStorage.setItem('token', token);
                 history.push("/home/homelist")
             }
