@@ -77,7 +77,7 @@ function HomeList(props: Props) {
                                 <div className="col-lg-12 col-sm-12">
                                     <div className="d-flex justify-content-between">
                                         <div className="d-flex">
-                                            <Link to={{ pathname: `/home/detailspage/${e.node.name}`, state: { fromDashboard: e.node } }} > <h5 className="reponame" style={{ padding: '10px',color:'black' }}>{e?.node?.name}</h5>
+                                            <Link to={{ pathname: `/home/detailspage/${e.node.name}`, state: { fromDashboard: e.node } }} > <h5 className="reponame" style={{ padding: '10px',color:'black','textDecoration':'none' }}>{e?.node?.name}</h5>
                                             </Link>
                                             <span style={{ padding: '10px' }}><Chip style={{ backgroundColor: 'black', color: 'grey' }} label={e.node.isPrivate ? 'Private' : 'Public'} /></span>
                                         </div>

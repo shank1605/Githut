@@ -9,27 +9,19 @@ import axios from "axios";
 const Login: React.FC = () => {
     let history = useHistory();
     const token: string | null = localStorage.getItem("token");
-    console.log(token)
-    if (token) {
-        history.push("/home/homelist");
-    }
-
-    // const REACT_APP_CLIENT_ID = '630c7adc853bc773cbbf';
-    // const REACT_APP_REDIRECT_URI = 'http://localhost:3000';
+    console.log(token);
 
     useEffect(() => {
         const code: RegExpMatchArray | number | string | undefined = window.location.href.match(/\?code=(.*)/)?.[1]
         console.log(code);
         if (code) {
-            // axios.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&scope=repo&redirect_uri=${REDIRECT_URI}&client_secret=${SECRET_KEY}&code=${code}`)
             const getcode = async (): Promise<any> => {
-                // let getc = await axios.get(`http://localhost:9999/authenticate/${code}`)
-                // let headers={headers:{'Access-Control-Allow-Origin':'https://githut-3o7d2edoo-shank1605.vercel.app/'}}
-                let getc = await axios.get(`https://github.com/login/oauth/access_token?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=user%20public_repo&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&client_secret=${process.env.REACT_APP_SECRET_KEY}&code=${code}`)
+                const data = {
+                    token: code
+                }
+
+                let getc = await axios.post('https://githutapinodejs.herokuapp.com/github', data)
                 console.log(getc.data.token);
-                // console.log(getc)
-                // let token = getc.data.split("&")[0].split("=")[1]
-                
                 let token = getc.data.token;
                 localStorage.setItem('token', token);
                 history.push("/home/homelist")
@@ -56,10 +48,6 @@ const Login: React.FC = () => {
                 </div>
             </div>
         </>
-
-
-
-
     );
 }
 
