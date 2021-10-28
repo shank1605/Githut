@@ -60,10 +60,12 @@ function HomeList(props: Props) {
         loadNext,
         isLoadingNext,
         refetch,
+        hasNext
     } = usePaginationFragment<listRepositoryNameQuery.listRepositoryNameQuery, homelistUserComponent_homelist.homelistUserComponent_homelist$key>(
         listfragement,
         props.preloadedQuery
     );
+    console.log(data);
 
     return (
         <>
@@ -96,7 +98,7 @@ function HomeList(props: Props) {
                         </div>
                     )
                 })}
-                <Button onClick={() => loadNext(5)} variant="outlined" className="bounce" style={{ margin: '20px 0px 26px', background: 'Teal', color: "white", borderRadius: '20px', padding: '7px 40px' }}>
+                <Button onClick={() => if(hasNext){loadNext(5)}} variant="outlined" className="bounce" style={{ margin: '20px 0px 26px', background: 'Teal', color: "white", borderRadius: '20px', padding: '7px 40px' }}>
                     Load More
                 </Button>
             </div>
