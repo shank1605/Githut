@@ -30,7 +30,7 @@ const Login: React.FC = () => {
                 // console.log(getc)
                 // let token = getc.data.split("&")[0].split("=")[1]
                 console.log(token);
-                // let token = getc.data.token;
+                let token = getc.data.token;
                 localStorage.setItem('token', token);
                 history.push("/home/homelist")
             }
